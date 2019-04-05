@@ -2,10 +2,11 @@
 <title> HW4 </title>
 <body>
 <h1> HW4 </h1>
+<h2> Authors: Ethan Steinbacher and Harry Zhou </h2>
 <hr>
 
 <form>
-<input type="button" value="Go back" onclick="window.location.href='index.php'" />
+<input type="button" value="Go back to main page" onclick="window.location.href='index.php'" />
 </form>
 
 <form>
@@ -28,6 +29,7 @@ $db = $conn->HW4;
 $tourneys = $db->tourneys;
 $matches = $db->matches;
 $players = $db->players;
+
 if (isset($_GET['tourn_name']) && $_GET['tourn_name']!="") {
     $tourn_name = $_GET["tourn_name"];
     if (isset($_GET['date']) && $_GET['date']!=""){

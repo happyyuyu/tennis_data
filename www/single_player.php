@@ -2,6 +2,7 @@
 <title> HW4 </title>
 <body>
 <h1> HW4 </h1>
+<h2> Authors: Ethan Steinbacher and Harry Zhou </h2>
 <hr>
 
 <form>
