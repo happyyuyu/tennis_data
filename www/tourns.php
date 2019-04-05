@@ -28,7 +28,6 @@ $db = $conn->HW4;
 $tourneys = $db->tourneys;
 $matches = $db->matches;
 $players = $db->players;
-
 if (isset($_GET['tourn_name']) && $_GET['tourn_name']!="") {
     $tourn_name = $_GET["tourn_name"];
     if (isset($_GET['date']) && $_GET['date']!=""){
@@ -43,13 +42,26 @@ if (isset($_GET['tourn_name']) && $_GET['tourn_name']!="") {
 } else{
     $result = null;
 }
-
-if ($result!=null){
-    foreach ($result as $row){
-        echo "<p> Name: $row[tourn_name] <br> Date: $row[date] <br> Surface: $row[surface] <br> <br> <p>";
-    }
-}
-
 ?>
+<table>
+<thead>
+    <tr>
+      <th>Tournament Name</th>
+      <th>Date</th>
+      <th>Surface</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+    if ($result!=null){
+        foreach ($result as $row){
+            echo "<tr>";
+            echo "<td> $row[tourn_name] </td> <td> $row[date] </td>  <td>$row[surface] </td>";
+            echo "</tr>";
+        }
+    }
+    ?>
+  </tbody>
+</table>
 </body>
 </html>
